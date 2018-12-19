@@ -5,9 +5,8 @@
  */
 
 const ACCOUNTS = {
-  server: '#',
-  client: '#',
-  server_secret: '#'
+  server: 'cLX58gnUK1nuSeuXfN78nuZmqq7McY4bHw',
+  server_secret: 'sn28LxEqNDHsesBfEhgKmTFv3iaxv'
 }
 var _require = require('casinocoin-libjs-address-codec'),
     isValidAddress = _require.isValidAddress;

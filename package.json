@@ -10,8 +10,8 @@
     "casinocoin-libjs": "^1.0.12",
     "express": "^4.16.4",
     "hoek": "^6.1.2",
-    "socket.io": "^2.2.0",
-    "jsonschema": "^1.2.2"
+    "jsonschema": "^1.2.2",
+    "socket.io": "^2.2.0"
   },
   "main": "app.js",
   "scripts": {
