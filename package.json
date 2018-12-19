@@ -1,0 +1,24 @@
+{
+  "name": "my_casinocoin_experiment",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "//": "Change the license to something appropriate. You may want to use 'UNLICENSED' if you are just starting out.",
+  "dependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "*",
+    "casinocoin-libjs": "^1.0.12",
+    "express": "^4.16.4",
+    "hoek": "^6.1.2",
+    "socket.io": "^2.2.0",
+    "jsonschema": "^1.2.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "*"
+  }
+}
