@@ -9,7 +9,7 @@ const ACCOUNTS = {
   server_secret: 'sn28LxEqNDHsesBfEhgKmTFv3iaxv'
 }
 var _require = require('casinocoin-libjs-address-codec'),
-    isValidAddress = _require.isValidAddress;
+isValidAddress = _require.isValidAddress;
 var txids = [];
 
 const express = require('express');
@@ -24,6 +24,8 @@ const CasinocoinAPI = require('casinocoin-libjs').CasinocoinAPI;
 const api = new CasinocoinAPI({
   server: 'wss://ws01.casinocoin.org:4443',
 });
+const isValidSecret = (CasinocoinAPI['_PRIVATE'].ledgerUtils.common.isValidSecret);
+console.log(isValidSecret(ACCOUNTS.server_secret))
 api.on('error', (errorCode, errorMessage) => {
   console.log(errorCode + ': ' + errorMessage);
 });
@@ -60,7 +62,9 @@ const init_game_server = () => {
       })
       socket.on('submit_secret', (data) => {
         console.log('a user is secreting:' + data);
+        if (!isValidSecret(data[1])) return;
         var signed = ( api.sign(data[0], data[1]));
+        console.log(signed)
         return api.submit(signed.signedTransaction)
           .then(result => {
             if (result.resultCode == 'tesSUCCESS'){
